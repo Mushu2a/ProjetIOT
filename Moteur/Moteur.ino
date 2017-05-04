@@ -4,6 +4,8 @@ int in1Pin = 2;
 int in2Pin = 3;
 int in3Pin = 4;
 int in4Pin = 5;
+
+int pas = 500;
  
 // change this to the number of steps on your motor
 #define STEPS 512
@@ -29,6 +31,7 @@ void loop()
 {
   if (Serial.available()) {
     int steps = Serial.parseInt();
-    motor.step(steps);
+    motor.step(pas);
+    motor.step(-pas);
   }
 }
